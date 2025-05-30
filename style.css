@@ -1,0 +1,207 @@
+/* 90년대 레트로 스타일 CSS */
+:root {
+    --retro-pink: #ff69b4;
+    --retro-blue: #00bfff;
+    --retro-purple: #9370db;
+    --retro-bg: #000080;
+    --retro-text: #ffffff;
+}
+
+body {
+    font-family: 'DotGothic16', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--retro-bg);
+    background-image: 
+        linear-gradient(45deg, #000033 25%, transparent 25%),
+        linear-gradient(-45deg, #000033 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #000033 75%),
+        linear-gradient(-45deg, transparent 75%, #000033 75%);
+    background-size: 20px 20px;
+    color: var(--retro-text);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border: 3px solid var(--retro-pink);
+    border-radius: 0;
+    box-shadow: 0 0 10px var(--retro-purple);
+}
+
+/* 깜빡이는 텍스트 효과 */
+.blink-text {
+    text-align: center;
+    color: var(--retro-pink);
+    font-size: 1.2em;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* 제목 스타일 */
+.retro-title {
+    color: var(--retro-blue);
+    text-align: center;
+    font-size: 2.5em;
+    text-shadow: 2px 2px var(--retro-purple);
+    margin: 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* 마퀴 효과 */
+.marquee {
+    background: var(--retro-purple);
+    color: white;
+    padding: 10px;
+    margin: 10px 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.marquee span {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* 네비게이션 메뉴 */
+.retro-nav {
+    margin: 20px 0;
+    border: 2px solid var(--retro-blue);
+    background: #000;
+}
+
+.retro-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.retro-nav a {
+    color: var(--retro-text);
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    transition: all 0.3s;
+}
+
+.retro-nav a:hover {
+    background: var(--retro-pink);
+    color: #000;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+p {
+    color: #666;
+}
+
+/* 애니메이션 카드 그리드 */
+.anime-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.anime-card {
+    background: #000;
+    border: 2px solid var(--retro-blue);
+    padding: 10px;
+    text-align: center;
+}
+
+.anime-image {
+    background: var(--retro-purple);
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    border: 1px solid var(--retro-pink);
+}
+
+.anime-card h3 {
+    color: var(--retro-pink);
+    margin: 10px 0;
+}
+
+.anime-card p {
+    color: var(--retro-text);
+    font-size: 0.9em;
+}
+
+/* 뉴스 섹션 */
+.news-section {
+    margin: 20px 0;
+    border: 2px solid var(--retro-purple);
+    padding: 15px;
+}
+
+.news-item {
+    margin: 10px 0;
+    padding: 10px;
+    border-bottom: 1px dashed var(--retro-blue);
+}
+
+.date {
+    color: var(--retro-pink);
+    font-weight: bold;
+}
+
+/* 푸터 */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid var(--retro-pink);
+}
+
+.counter {
+    font-family: "Courier New", monospace;
+    background: #000;
+    color: #0f0;
+    padding: 5px 10px;
+    display: inline-block;
+    border: 1px solid #0f0;
+    margin-bottom: 10px;
+}
+
+.browser-note {
+    font-size: 0.8em;
+    color: #888;
+    margin-top: 10px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 600px) {
+    .retro-nav ul {
+        flex-direction: column;
+    }
+    
+    .retro-nav a {
+        text-align: center;
+    }
+    
+    .anime-grid {
+        grid-template-columns: 1fr;
+    }
+} 
